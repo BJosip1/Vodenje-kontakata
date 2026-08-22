@@ -1,0 +1,5 @@
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Domain\obj\Debug\net8.0\Domain.sourcelink.json

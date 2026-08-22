@@ -1,0 +1,8 @@
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.csproj.AssemblyReference.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.AssemblyInfoInputs.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.AssemblyInfo.cs
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.csproj.CoreCompileInputs.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.sourcelink.json
