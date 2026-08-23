@@ -48,3 +48,18 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET build artefakti
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/

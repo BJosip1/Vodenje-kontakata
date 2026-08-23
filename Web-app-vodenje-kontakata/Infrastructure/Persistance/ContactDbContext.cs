@@ -1,15 +1,10 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Application.Interfaces;
 
 namespace Infrastructure.Persistance
 {
-    public class ContactDbContext : DbContext, IApplicationDbContext
+    public class ContactDbContext : DbContext, IApplicationDbContext, IUnitOfWork
     {
         public ContactDbContext(DbContextOptions<ContactDbContext> options)
             : base(options) { }
@@ -20,7 +15,10 @@ namespace Infrastructure.Persistance
         public DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<ContactTag> ContactTags { get; set; }
-
+        Task<int> IUnitOfWork.SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ContactDbContext).Assembly);
