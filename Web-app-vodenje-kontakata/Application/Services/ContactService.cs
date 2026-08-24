@@ -134,14 +134,26 @@ namespace Application.Services
             if (contact == null)
                 return Result<GetContactDTO>.NotFound($"Kontakt s ID-em {id} nije pronađen.");
 
-            contact.PhoneNumbers = contact.PhoneNumbers
-                .Where(p => !dto.PhoneNumberIds.Contains(p.Id)).ToList();
+            var validation = new ValidationResult();
 
-            contact.Emails = contact.Emails
-                .Where(e => !dto.EmailIds.Contains(e.Id)).ToList();
+            var missingPhoneIds = dto.PhoneNumberIds.Except(contact.PhoneNumbers.Select(p => p.Id)).ToList();
+            if (missingPhoneIds.Any())
+                validation.ValidationItems.Add($"Telefonski broj(evi) s ID-em {string.Join(", ", missingPhoneIds)} ne pripadaju ovom kontaktu.");
 
-            contact.ContactTags = contact.ContactTags
-                .Where(ct => !dto.TagIds.Contains(ct.TagId)).ToList();
+            var missingEmailIds = dto.EmailIds.Except(contact.Emails.Select(e => e.Id)).ToList();
+            if (missingEmailIds.Any())
+                validation.ValidationItems.Add($"E-mail(ovi) s ID-em {string.Join(", ", missingEmailIds)} ne pripadaju ovom kontaktu.");
+
+            var missingTagIds = dto.TagIds.Except(contact.ContactTags.Select(ct => ct.TagId)).ToList();
+            if (missingTagIds.Any())
+                validation.ValidationItems.Add($"Tag(ovi) s ID-em {string.Join(", ", missingTagIds)} ne pripadaju ovom kontaktom.");
+
+            if (!validation.IsSuccess)
+                return Result<GetContactDTO>.Failure(validation.ValidationItems);
+
+            contact.PhoneNumbers = contact.PhoneNumbers.Where(p => !dto.PhoneNumberIds.Contains(p.Id)).ToList();
+            contact.Emails = contact.Emails.Where(e => !dto.EmailIds.Contains(e.Id)).ToList();
+            contact.ContactTags = contact.ContactTags.Where(ct => !dto.TagIds.Contains(ct.TagId)).ToList();
 
             await _contactRepository.UpdateContact(contact);
             await _unitOfWork.SaveChangesAsync();
@@ -172,6 +184,7 @@ namespace Application.Services
                 result.ValidationItems.Add("Prezime je obavezno.");
             else if (lastName.Length > 100)
                 result.ValidationItems.Add("Prezime ne smije biti duže od 100 znakova.");
+            
 
             if (address == null)
             {
@@ -181,12 +194,20 @@ namespace Application.Services
             {
                 if (string.IsNullOrWhiteSpace(address.Street))
                     result.ValidationItems.Add("Ulica je obavezna.");
+                if (address.Street.Length > 100)
+                    result.ValidationItems.Add("Ulica ne smije sadržavati više od 100 znakova.");
                 if (string.IsNullOrWhiteSpace(address.City))
                     result.ValidationItems.Add("Grad je obavezan.");
+                if (address.City.Length > 100)
+                    result.ValidationItems.Add("Grad ne smije sadržavati više od 100 znakova.");
                 if (string.IsNullOrWhiteSpace(address.PostalCode))
                     result.ValidationItems.Add("Poštanski broj je obavezan.");
+                if (address.PostalCode.Length > 15)
+                    result.ValidationItems.Add("Poštanski broj ne smije sadržavati više od 15 znakova.");
                 if (string.IsNullOrWhiteSpace(address.Country))
                     result.ValidationItems.Add("Država je obavezna.");
+                if (address.Country.Length > 100)
+                    result.ValidationItems.Add("Država ne smije sadržavati više od 100 znakova.");
             }
 
             return result;
@@ -198,6 +219,10 @@ namespace Application.Services
             {
                 if (string.IsNullOrWhiteSpace(phone.Type) || string.IsNullOrWhiteSpace(phone.Value))
                     result.ValidationItems.Add("Tip i vrijednost telefonskog broja su obavezni.");
+                if(phone.Type.Length>50)
+                    result.ValidationItems.Add("Tip telefonskog broja ne smije sadržavati više od 50 znakova.");
+                if (phone.Value.Length > 50)
+                    result.ValidationItems.Add("Vrijednost telefonskog broja ne smije sadržavati više od 50 znakova.");
             }
         }
 
@@ -213,6 +238,11 @@ namespace Application.Services
 
                 if (!IsValidEmail(email.Value))
                     result.ValidationItems.Add($"E-mail adresa '{email.Value}' nije u ispravnom formatu.");
+                else if (email.Value.Length > 200)
+                    result.ValidationItems.Add("Vrijednost e-maila ne smije sadržavati više od 200 znakova.");
+                if (email.Type.Length > 50)
+                    result.ValidationItems.Add("Tip e-maila ne smije sadržavati više od 50 znakova.");
+                
             }
         }
 

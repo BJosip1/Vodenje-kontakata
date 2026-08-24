@@ -74,12 +74,12 @@ namespace Infrastructure.Persistance
                 },
                 new Contact
                 {
-                    FirstName = "Petra",
+                    FirstName = "Petar",
                     LastName = "Radan",
-                    Note = "Prijateljica",
+                    Note = "Prijatelj s posla",
                     Address = splitAddress,
                     PhoneNumbers = { new PhoneNumber { Type = "Mobile", Value = "+385993834164" } },
-                    Emails = { new Email { Type = "Personal", Value = "petra.radan@gmail.com" } },
+                    Emails = { new Email { Type = "Personal", Value = "petar.radan@gmail.com" } },
                     ContactTags = { new ContactTag { Tag = friend }, new ContactTag { Tag = work } }
                 }
             };

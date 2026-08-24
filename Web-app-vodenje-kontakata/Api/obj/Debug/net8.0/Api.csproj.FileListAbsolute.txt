@@ -167,3 +167,4 @@ D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\refint\A
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.pdb
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\ref\Api.dll
+D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cs

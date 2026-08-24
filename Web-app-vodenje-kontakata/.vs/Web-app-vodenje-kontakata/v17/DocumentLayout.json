@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7320A99C-B29F-4C5E-9CBF-EF924A8356B9}|Infrastructure\\Infrastructure.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\infrastructure\\persistance\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7320A99C-B29F-4C5E-9CBF-EF924A8356B9}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\application\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|solutionrelative:application\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DFBE05C-954F-4CB6-AF1C-FBF4B6B047F4}|Api\\Api.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DFBE05C-954F-4CB6-AF1C-FBF4B6B047F4}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\application\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|solutionrelative:application\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4352D075-4B65-49CB-A967-ECCB11B63A66}|Application\\Application.csproj|solutionrelative:application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7320A99C-B29F-4C5E-9CBF-EF924A8356B9}|Infrastructure\\Infrastructure.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7320A99C-B29F-4C5E-9CBF-EF924A8356B9}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DFBE05C-954F-4CB6-AF1C-FBF4B6B047F4}|Api\\Api.csproj|d:\\code\\web-app-kontakti\\web-app-vodenje-kontakata\\api\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DFBE05C-954F-4CB6-AF1C-FBF4B6B047F4}|Api\\Api.csproj|solutionrelative:api\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 74,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +30,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DbInitializer.cs",
-              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Infrastructure\\Persistance\\DbInitializer.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\DbInitializer.cs",
-              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Infrastructure\\Persistance\\DbInitializer.cs",
-              "RelativeToolTip": "Infrastructure\\Persistance\\DbInitializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-23T17:15:07.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Api\\Program.cs",
-              "RelativeDocumentMoniker": "Api\\Program.cs",
-              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Api\\Program.cs",
-              "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\Repositories\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\ContactRepository.cs",
+              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\Repositories\\ContactRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\ContactRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAD4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-23T17:03:17.13Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-23T17:00:35.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-24T15:35:38.116Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "Application\\DependencyInjection.cs",
-              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\DependencyInjection.cs",
-              "RelativeToolTip": "Application\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Api\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\ContactController.cs",
+              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Api\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "Api\\Controllers\\ContactController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-23T16:58:36.714Z",
+              "WhenOpened": "2026-08-24T14:20:55.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactService.cs",
+              "DocumentMoniker": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\Services\\ContactService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ContactService.cs",
+              "ToolTip": "D:\\Code\\web-app-kontakti\\Web-app-vodenje-kontakata\\Application\\Services\\ContactService.cs",
+              "RelativeToolTip": "Application\\Services\\ContactService.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJQAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T13:20:34.398Z",
               "EditorCaption": ""
             }
           ]
