@@ -160,7 +160,6 @@ D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\staticwe
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\staticwebassets.development.json
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.csproj.Up2Date
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\Api.dll
 D:\Code\web-app-kontakti\Web-app-vodenje-kontakata\Api\obj\Debug\net8.0\refint\Api.dll

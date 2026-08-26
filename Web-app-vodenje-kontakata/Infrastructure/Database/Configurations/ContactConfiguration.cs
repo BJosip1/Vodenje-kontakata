@@ -15,11 +15,13 @@ namespace Infrastructure.Database.Configurations
 
             builder.Property(c => c.FirstName)
                 .HasMaxLength(100)
-                .IsRequired();
+                .IsRequired()
+                .UseCollation("Croatian_CI_AS");
 
             builder.Property(c => c.LastName)
                 .HasMaxLength(100)
-                .IsRequired();
+                .IsRequired()
+                .UseCollation("Croatian_CI_AS");
 
             builder.Property(c => c.Note)
                 .HasMaxLength(1000)

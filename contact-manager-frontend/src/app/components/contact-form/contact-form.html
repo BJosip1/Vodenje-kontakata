@@ -1,0 +1,95 @@
+<a routerLink="/contacts">← Natrag na popis</a>
+
+<h2>{{ isEditMode() ? 'Uredi kontakt' : 'Novi kontakt' }}</h2>
+
+@if (errors().length > 0) {
+  <ul style="color: red">
+    @for (err of errors(); track err) {
+      <li>{{ err }}</li>
+    }
+  </ul>
+}
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Ime *</label>
+    <input type="text" formControlName="firstName">
+  </div>
+
+  <div>
+    <label>Prezime *</label>
+    <input type="text" formControlName="lastName">
+  </div>
+
+  <div>
+    <label>Bilješka</label>
+    <textarea formControlName="note"></textarea>
+  </div>
+
+  <fieldset formGroupName="address">
+    <legend>Adresa</legend>
+    <div>
+      <label>Ulica *</label>
+      <input type="text" formControlName="street">
+    </div>
+    <div>
+      <label>Grad *</label>
+      <input type="text" formControlName="city">
+    </div>
+    <div>
+      <label>Poštanski broj *</label>
+      <input type="text" formControlName="postalCode">
+    </div>
+    <div>
+      <label>Država *</label>
+      <input type="text" formControlName="country">
+    </div>
+  </fieldset>
+
+  @if (!isEditMode()) {
+    <fieldset>
+      <legend>Telefonski brojevi</legend>
+      <div formArrayName="phoneNumbers">
+        @for (phone of phoneNumbers.controls; track $index; let i = $index) {
+          <div [formGroupName]="i">
+            <input type="text" formControlName="type" placeholder="Tip (npr. Mobile)">
+            <input type="text" formControlName="value" placeholder="Broj">
+            <button type="button" (click)="removePhoneNumber(i)">Ukloni</button>
+          </div>
+        }
+      </div>
+      <button type="button" (click)="addPhoneNumber()">+ Dodaj broj</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>E-mail adrese</legend>
+      <div formArrayName="emails">
+        @for (email of emails.controls; track $index; let i = $index) {
+          <div [formGroupName]="i">
+            <input type="text" formControlName="type" placeholder="Tip (npr. Personal)">
+            <input type="email" formControlName="value" placeholder="E-mail">
+            <button type="button" (click)="removeEmail(i)">Ukloni</button>
+          </div>
+        }
+      </div>
+      <button type="button" (click)="addEmail()">+ Dodaj e-mail</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tagovi</legend>
+      <div formArrayName="tags">
+        @for (tag of tags.controls; track $index; let i = $index) {
+          <div>
+            <input type="text" [formControlName]="i" placeholder="Naziv taga">
+            <button type="button" (click)="removeTag(i)">Ukloni</button>
+          </div>
+        }
+      </div>
+      <button type="button" (click)="addTag()">+ Dodaj tag</button>
+    </fieldset>
+  }
+
+  <button type="submit" [disabled]="loading()">
+    {{ isEditMode() ? 'Spremi promjene' : 'Kreiraj kontakt' }}
+  </button>
+</form>

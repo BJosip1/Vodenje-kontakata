@@ -1,0 +1,18 @@
+<a routerLink="/contacts/new">+ Novi kontakt</a>
+<h2>Kontakti</h2>
+
+@if (loading()) {
+  <p>Učitavanje...</p>
+} @else if (error()) {
+  <p style="color: red">{{ error() }}</p>
+} @else {
+  <ul>
+  @for (contact of contacts(); track contact.id) {
+    <li>
+      <a [routerLink]="['/contacts', contact.id]">
+        {{ contact.firstName }} {{ contact.lastName }} — {{ contact.address.city }}
+      </a>
+    </li>
+  }
+</ul>
+}

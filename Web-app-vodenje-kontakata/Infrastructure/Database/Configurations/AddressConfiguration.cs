@@ -19,7 +19,8 @@ namespace Infrastructure.Database.Configurations
 
             builder.Property(a => a.City)
                 .HasMaxLength(100)
-                .IsRequired();
+                .IsRequired()
+                .UseCollation("Croatian_CI_AS");
 
             builder.Property(a => a.PostalCode)
                 .HasMaxLength(15)
