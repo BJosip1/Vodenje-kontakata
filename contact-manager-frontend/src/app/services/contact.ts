@@ -6,7 +6,8 @@ import { Contact } from '../models/contact';
 import { PagedResult } from '../models/paged-result';
 import { PostContact } from '../models/post-contact';
 import { PutContact } from '../models/put-contact';
-
+import { AddContactDetails } from '../models/add-contact-details';
+import { RemoveContactDetails } from '../models/remove-contact-details';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,14 @@ export class ContactService {
   }
 
   deleteContact(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.baseUrl}/${id}`);
-}
+  return this.http.delete<void>(`${this.baseUrl}/${id}`);  
+  }
+
+  addContactDetails(id: number, dto: AddContactDetails): Observable<Contact> {
+  return this.http.post<Contact>(`${this.baseUrl}/${id}/details`, dto);
+  }
+
+  removeContactDetails(id: number, dto: RemoveContactDetails): Observable<Contact> {
+  return this.http.post<Contact>(`${this.baseUrl}/${id}/details/remove`, dto);
+  }
 }

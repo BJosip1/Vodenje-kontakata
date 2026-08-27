@@ -1,18 +1,44 @@
-<a routerLink="/contacts/new">+ Novi kontakt</a>
 <h2>Kontakti</h2>
+
+<a routerLink="/contacts/new">+ Novi kontakt</a>
+
+<form (ngSubmit)="onSearchSubmit()">
+  <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Pretraži po imenu, prezimenu, tagu, e-mailu ili telefonu">
+  <input type="text" [(ngModel)]="tagFilter" name="tagFilter" placeholder="Filtriraj po tagu">
+
+  <select [(ngModel)]="sortBy" name="sortBy" (ngModelChange)="onSortChange()">
+    <option value="lastName">Prezime (A-Ž)</option>
+    <option value="-lastName">Prezime (Ž-A)</option>
+    <option value="firstName">Ime (A-Ž)</option>
+    <option value="-firstName">Ime (Ž-A)</option>
+    <option value="city">Grad (A-Ž)</option>
+    <option value="-city">Grad (Ž-A)</option>
+  </select>
+
+  <button type="submit">Pretraži</button>
+  <button type="button" (click)="clearFilters()">Poništi filtere</button>
+</form>
 
 @if (loading()) {
   <p>Učitavanje...</p>
 } @else if (error()) {
   <p style="color: red">{{ error() }}</p>
+} @else if (contacts().length === 0) {
+  <p>Nema pronađenih kontakata.</p>
 } @else {
   <ul>
-  @for (contact of contacts(); track contact.id) {
-    <li>
-      <a [routerLink]="['/contacts', contact.id]">
-        {{ contact.firstName }} {{ contact.lastName }} — {{ contact.address.city }}
-      </a>
-    </li>
-  }
-</ul>
+    @for (contact of contacts(); track contact.id) {
+      <li>
+        <a [routerLink]="['/contacts', contact.id]">
+          {{ contact.firstName }} {{ contact.lastName }} — {{ contact.address.city }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <div>
+    <button (click)="goToPage(page() - 1)" [disabled]="page() === 1">← Prethodna</button>
+    <span>Stranica {{ page() }} / {{ totalPages() }} ({{ totalCount() }} kontakata ukupno)</span>
+    <button (click)="goToPage(page() + 1)" [disabled]="page() === totalPages()">Sljedeća →</button>
+  </div>
 }
