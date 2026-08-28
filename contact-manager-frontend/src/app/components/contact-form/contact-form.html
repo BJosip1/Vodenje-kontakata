@@ -3,7 +3,7 @@
 <h2>{{ isEditMode() ? 'Uredi kontakt' : 'Novi kontakt' }}</h2>
 
 @if (errors().length > 0) {
-  <ul style="color: red">
+  <ul class="error-list">
     @for (err of errors(); track err) {
       <li>{{ err }}</li>
     }

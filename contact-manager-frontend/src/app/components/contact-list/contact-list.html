@@ -1,6 +1,6 @@
+<a routerLink="/contacts/new">+ Novi kontakt</a>
 <h2>Kontakti</h2>
 
-<a routerLink="/contacts/new">+ Novi kontakt</a>
 
 <form (ngSubmit)="onSearchSubmit()">
   <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Pretraži po imenu, prezimenu, tagu, e-mailu ili telefonu">
@@ -36,9 +36,9 @@
     }
   </ul>
 
-  <div>
-    <button (click)="goToPage(page() - 1)" [disabled]="page() === 1">← Prethodna</button>
-    <span>Stranica {{ page() }} / {{ totalPages() }} ({{ totalCount() }} kontakata ukupno)</span>
-    <button (click)="goToPage(page() + 1)" [disabled]="page() === totalPages()">Sljedeća →</button>
-  </div>
+  <div class="pagination">
+  <button (click)="goToPage(page() - 1)" [disabled]="page() === 1">← Prethodna</button>
+  <span>Stranica {{ page() }} / {{ totalPages() }} ({{ totalCount() }} kontakata ukupno)</span>
+  <button (click)="goToPage(page() + 1)" [disabled]="page() === totalPages()">Sljedeća →</button>
+</div>
 }

@@ -1,2 +1,156 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1a1a1a;
+  background-color: #f7f7f8;
+  margin: 0;
+  padding: 24px;
+  line-height: 1.5;
+}
+
+app-root {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+h3 {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button[type="submit"] {
+  background-color: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #0052a3;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+form div,
+fieldset > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #555;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 0 16px 0;
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.error-list {
+  color: #c0392b;
+  background-color: #fdecea;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  list-style: none;
+}
