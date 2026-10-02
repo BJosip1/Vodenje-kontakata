@@ -1,0 +1,34 @@
+﻿using Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace Infrastructure.Database.Configurations
+{
+    public class AddressConfiguration : IEntityTypeConfiguration<Address>
+    {
+        public void Configure(EntityTypeBuilder<Address> builder)
+        {
+            builder.ToTable("Addresses");
+
+            builder.HasKey(a => a.Id);
+            builder.Property(a => a.Id);
+
+            builder.Property(a => a.Street)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            builder.Property(a => a.City)
+                .HasMaxLength(100)
+                .IsRequired()
+                .UseCollation("Croatian_CI_AS");
+
+            builder.Property(a => a.PostalCode)
+                .HasMaxLength(15)
+                .IsRequired();
+
+            builder.Property(a => a.Country)
+                .HasMaxLength(100)
+                .IsRequired();
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@if (loading()) {
+  <p>Učitavanje...</p>
+} @else if (error()) {
+  <p style="color: red">{{ error() }}</p>
+  <a routerLink="/contacts">← Natrag na popis</a>
+} @else if (contact(); as c) {
+  <div class="actions">
+    <a routerLink="/contacts">← Natrag na popis</a>
+    <a [routerLink]="['/contacts', c.id, 'edit']">Uredi</a>
+    <button (click)="onDelete()" [disabled]="deleting()">
+      {{ deleting() ? 'Brisanje...' : 'Obriši' }}
+    </button>
+  </div>
+  <h2>{{ c.firstName }} {{ c.lastName }}</h2>
+
+  @if (detailErrors().length > 0) {
+    <ul class="error-list">
+      @for (err of detailErrors(); track err) {
+        <li>{{ err }}</li>
+      }
+    </ul>
+  }
+
+  @if (c.note) {
+    <p><em>{{ c.note }}</em></p>
+  }
+
+  <h3>Adresa</h3>
+  <p>
+    {{ c.address.street }}<br>
+    {{ c.address.postalCode }} {{ c.address.city }}<br>
+    {{ c.address.country }}
+  </p>
+
+ <h3>Telefonski brojevi</h3>
+  @if (c.phoneNumbers.length === 0) {
+    <p>Nema unesenih brojeva.</p>
+  } @else {
+    <ul>
+      @for (phone of c.phoneNumbers; track phone.id) {
+        <li>
+          {{ phone.type }}: {{ phone.value }}
+          <button (click)="removePhone(phone.id)" [disabled]="savingDetails()">Ukloni</button>
+        </li>
+      }
+    </ul>
+  }
+  <div>
+    <input type="text" [(ngModel)]="newPhoneType" placeholder="Tip (npr. Mobile)">
+    <input type="text" [(ngModel)]="newPhoneValue" placeholder="Broj telefona">
+    <button (click)="addPhone()" [disabled]="savingDetails()">+ Dodaj broj</button>
+  </div>
+
+   <h3>E-mail adrese</h3>
+  @if (c.emails.length === 0) {
+    <p>Nema unesenih e-mail adresa.</p>
+  } @else {
+    <ul>
+      @for (email of c.emails; track email.id) {
+        <li>
+          {{ email.type }}: {{ email.value }}
+          <button (click)="removeEmail(email.id)" [disabled]="savingDetails()">Ukloni</button>
+        </li>
+      }
+    </ul>
+  }
+  <div>
+    <input type="text" [(ngModel)]="newEmailType" placeholder="Tip (npr. Personal)">
+    <input type="email" [(ngModel)]="newEmailValue" placeholder="E-mail adresa">
+    <button (click)="addEmail()" [disabled]="savingDetails()">+ Dodaj e-mail</button>
+  </div>
+
+  <h3>Tagovi</h3>
+  @if (c.tags.length === 0) {
+    <p>Nema tagova.</p>
+  } @else {
+    <ul>
+      @for (tag of c.tags; track tag.id) {
+        <li>
+          {{ tag.name }}
+          <button (click)="removeTagFromContact(tag.id)" [disabled]="savingDetails()">Ukloni</button>
+        </li>
+      }
+    </ul>
+  }
+  <div>
+    <input type="text" [(ngModel)]="newTag" placeholder="Naziv taga">
+    <button (click)="addTagToContact()" [disabled]="savingDetails()">+ Dodaj tag</button>
+  </div>
+}

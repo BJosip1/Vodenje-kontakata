@@ -1,0 +1,13 @@
+﻿namespace Domain.Models
+{
+    public class PhoneNumber
+    {
+        public int Id { get; set; }
+        public string Type { get; set; } 
+        public string Value { get; set; }
+        public int ContactId { get; set; }
+        #region Navigation Properties
+        public Contact Contact { get; set; }
+        #endregion
+    }
+}
